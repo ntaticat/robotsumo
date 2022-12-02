@@ -5,14 +5,14 @@ import 'package:robotsumo/components/data.dart';
 
 import '../components/joystick_mode_dropdown.dart';
 
-class StaticJoystickPage extends StatefulWidget {
-  const StaticJoystickPage({Key? key}) : super(key: key);
+class PruebasPage extends StatefulWidget {
+  const PruebasPage({Key? key}) : super(key: key);
 
   @override
-  _StaticJoystickPageState createState() => _StaticJoystickPageState();
+  _PruebasPageState createState() => _PruebasPageState();
 }
 
-class _StaticJoystickPageState extends State<StaticJoystickPage> {
+class _PruebasPageState extends State<PruebasPage> {
   double _x = 100;
   double _y = 100;
   JoystickMode _joystickMode = JoystickMode.all;
@@ -43,31 +43,18 @@ class _StaticJoystickPageState extends State<StaticJoystickPage> {
         ],
       ),
       body: SafeArea(
-        child: Stack(
+        child: Column(
           children: [
-            Container(
-              color: Colors.deepPurple[200],
-            ),
             Align(
               alignment: const Alignment(0, 0),
-              child: Joystick(
-                mode: _joystickMode,
-                listener: (details) {
-                  setState(() {
-                    _x = _x + step * details.x;
-                    _y = _y + step * details.y;
-                  });
-                },
+              child: IconButton(
+                iconSize: 100,
+                color: Colors.amber,
+                highlightColor: Colors.blueAccent,
+                onPressed: (){},
+                icon: const Icon(Icons.public_sharp, size: 100,)
               ),
             ),
-            InkWell(
-              splashColor: Colors.green,  
-              highlightColor: Colors.blue,  
-              child: IgnorePointer(child: Icon(Icons.crop_square_rounded, size: 100)),
-              onTap: () {
-                _wasClicked = !_wasClicked;
-              },
-            )
           ],
         ),
       ),

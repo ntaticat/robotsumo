@@ -62,6 +62,26 @@ class MainPage extends StatelessWidget {
             },
             child: const Text('Joystick Cuadrado'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ArrowPadPage()),
+              );
+            },
+            child: const Text('D-Pad'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const PruebasPage()),
+              );
+            },
+            child: const Text('Pruebas'),
+          ),
         ],
       ),
     );
